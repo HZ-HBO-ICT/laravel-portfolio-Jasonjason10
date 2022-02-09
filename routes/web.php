@@ -27,7 +27,7 @@ Route::get('/posts/{post}', function ($post) {
     ];
 
     if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
+        abort(404, 'Sorry, that post is not here.');
     }
 
     return view('post', [
