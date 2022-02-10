@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\BlogController;
@@ -44,4 +45,6 @@ Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/FAQ', [FAQController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
+Route::get('/{name}', [PortfolioController::class, 'show']);
+
 

@@ -2,6 +2,8 @@
 
 namespace app\Http\Controllers;
 
+use App\Models\Faq;
+
 class FAQController
 {
     /*
@@ -9,6 +11,10 @@ class FAQController
      */
     public function show()
     {
-        return view('FAQ');
+        $posts = Faq::all();
+        return view('FAQ',
+        [
+            'posts'=>$posts
+        ]);
     }
 }
