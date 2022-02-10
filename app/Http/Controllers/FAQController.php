@@ -12,8 +12,7 @@ class FAQController
     public function show()
     {
         $posts = Faq::all();
-        return view('FAQ',
-        [
+        return view('FAQ', [
             'posts'=>$posts
         ]);
     }

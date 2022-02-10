@@ -19,7 +19,6 @@ class CreateFaqsTable extends Migration
             $table->string('questions');
             $table->text('answers');
             $table->string('link')->nullable();
-
         });
     }
 

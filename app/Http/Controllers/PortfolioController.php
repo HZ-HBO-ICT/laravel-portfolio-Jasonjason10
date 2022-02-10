@@ -18,10 +18,10 @@ class PortfolioController
      */
     public function show($name)
     {
-        $persons = persons::where('name', $name)->firstOrFail();
+        $Persons = persons::where('name', $name)->firstOrFail();
 //        dd($persons);
         return view("portfolio", [
-            'persons' => $persons
+            'persons' => $Persons
         ]);
     }
 }
