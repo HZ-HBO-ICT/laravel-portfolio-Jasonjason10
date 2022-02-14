@@ -9,7 +9,9 @@ class Grades extends Model
 {
     use HasFactory;
 
-
+/*
+ * added the result
+ */
     public function addResult($grade)
     {
         if ($grade > $this->best_grade) {
@@ -19,6 +21,5 @@ class Grades extends Model
             }
             $this->save();
         }
-
     }
 }
