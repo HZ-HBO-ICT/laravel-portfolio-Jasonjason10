@@ -13,8 +13,6 @@ class BlogController
     {
         $blogs = Article::all();
 
-
-        return view('blog', ['blogs'=>$blogs]);
-
+        return view('blog', ['blogs' => $blogs]);
     }
 }
