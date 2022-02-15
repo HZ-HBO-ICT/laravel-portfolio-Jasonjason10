@@ -35,7 +35,7 @@ class ArticleSeeder extends Seeder
         ]);
         \DB::table('faqs')->insert([
             'questions' => 'Wat zijn de instructies om je auto te parkeren op het HZ parkeerterrein?',
-            'answers' => '      Gratis parkeren is mogelijk op het parkeerterrein van PZEM aan de Poelendaelesingel 10 in Middelburg. Dit
+            'answers' => 'Gratis parkeren is mogelijk op het parkeerterrein van PZEM aan de Poelendaelesingel 10 in Middelburg. Dit
                               is op een paar minuten lopen afstand naar de HZ. Het is helaas niet mogelijk om direct bij het HZ-pand te
                               parkeren. Bij het pand zelf zijn wel twee invalideplaatsen en plekken voor HZ-auto’s.
                               Let op, parkeer je aan de Poelendaelesingel, dan kun je niet via het tunneltje de HZ bereiken i.v.m. de
