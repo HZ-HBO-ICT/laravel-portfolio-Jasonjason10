@@ -15,8 +15,7 @@ class FaqSeeder extends Seeder
     {
         create([
             'questions' => \Str::random(10),
-            'answers'=> \Str::random(10),
+            'answers' => \Str::random(10),
         ]);
-
     }
 }
