@@ -13,6 +13,10 @@ class FaqSeeder extends Seeder
      */
     public function run()
     {
-        //
+        create([
+            'questions' => \Str::random(10),
+            'answers'=> \Str::random(10),
+        ]);
+
     }
 }

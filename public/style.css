@@ -64,11 +64,8 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #111;
 }
-.current_page_item {
-    color: blue;
-    font-size: 1000px;
-    background-color: #ff6574;
-}
+
+
 
 body {
   text-align: center;
@@ -116,28 +113,10 @@ footer {
   grid-column: 1 / 4;
 }
 
-h1 {
+h1,p,span,ol,ul,h2{
   color: white;
 }
 
-p {
-  color: white;
-}
-
-span {
-  color: white;
-}
-
-ol {
-  color: white;
-}
-ul {
-  color: white;
-}
-
-h2 {
-  color: white;
-}
 
 article {
   color: rgb(2, 0, 36);

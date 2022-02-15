@@ -2,6 +2,8 @@
 
 namespace app\Http\Controllers;
 
+use App\Models\Article;
+
 class BlogController
 {
     /*
@@ -9,6 +11,10 @@ class BlogController
      */
     public function show()
     {
-        return view('blog');
+        $blogs = Article::all();
+
+
+        return view('blog', ['blogs'=>$blogs]);
+
     }
 }
