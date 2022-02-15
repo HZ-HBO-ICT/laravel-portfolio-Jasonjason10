@@ -42,7 +42,5 @@ class ArticleSeeder extends Seeder
                               bouwwerkzaamheden voor het Joint Research Center Zeeland. Je kan via het kruispunt bij de stoplichten
                               oversteken.'
         ]);
-
-
     }
 }
