@@ -72,23 +72,24 @@
     <div class="table">
         <table id="cijfer">
             <div id="tablehead">
+                <tr>
+                    <th>Quartile</th>
+                    <th>Courses </th>
+                    <th>Exams</th>
+                    <th>Grades</th>
+                    <th>EC</th>
+                </tr>
                 @foreach($grades as $grade)
                 <tr>
-                    <th>{{$grade->Quartile}}</th>
-                    <th>{{$grade->course_name}}</th>
-                    <th>{{$grade->test_name}}</th>
-                    <th>{{$grade->best_grade}}</th>
-                    <th>{{$grade->EC}}</th>
+                    <td>{{$grade->Quartile}}</td>
+                    <td>{{$grade->course_name}}</td>
+                    <td>{{$grade->test_name}}</td>
+                    <td>{{$grade->best_grade}}</td>
+                    <td>{{$grade->EC}}</td>
                 </tr>
                 @endforeach
             </div>
-{{--            <tr>--}}
-{{--                <td rowspan="3">1</td>--}}
-{{--                <td>Computer science basics </td>--}}
-{{--                <td>5</td>--}}
-{{--                <td>Written exam</td>--}}
-{{--                <td>-</td>--}}
-{{--            </tr>--}}
+
 
 
 {{--            <tr>--}}
