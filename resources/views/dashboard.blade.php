@@ -72,81 +72,83 @@
     <div class="table">
         <table id="cijfer">
             <div id="tablehead">
+                @foreach($grades as $grade)
                 <tr>
-                    <th>Kwartaal</th>
-                    <th>Vakken</th>
-                    <th>Studiepunten</th>
-                    <th>Toetsen</th>
-                    <th>Cijfers</th>
+                    <th>{{$grade->Quartile}}</th>
+                    <th>{{$grade->course_name}}</th>
+                    <th>{{$grade->test_name}}</th>
+                    <th>{{$grade->best_grade}}</th>
+                    <th>{{$grade->EC}}</th>
                 </tr>
+                @endforeach
             </div>
-            <tr>
-                <td rowspan="3">1</td>
-                <td>Computer science basics </td>
-                <td>5</td>
-                <td>Written exam</td>
-                <td>-</td>
-            </tr>
+{{--            <tr>--}}
+{{--                <td rowspan="3">1</td>--}}
+{{--                <td>Computer science basics </td>--}}
+{{--                <td>5</td>--}}
+{{--                <td>Written exam</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
 
 
-            <tr>
-                <td>Program- and Career Orientation</td>
-                <td>2,5</td>
-                <td>Assessment exam</td>
-                <td>-</td>
+{{--            <tr>--}}
+{{--                <td>Program- and Career Orientation</td>--}}
+{{--                <td>2,5</td>--}}
+{{--                <td>Assessment exam</td>--}}
+{{--                <td>-</td>--}}
 
 
-            </tr>
-            <tr>
-                <td>Programming Basics</td>
-                <td>5</td>
-                <td> Case study exam</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Object-oriented programming</td>
-                <td>10</td>
-                <td>Case Study, Project</td>
-                <td>-</td>
-            </tr>
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>Programming Basics</td>--}}
+{{--                <td>5</td>--}}
+{{--                <td> Case study exam</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>2</td>--}}
+{{--                <td>Object-oriented programming</td>--}}
+{{--                <td>10</td>--}}
+{{--                <td>Case Study, Project</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
 
-            <tr>
-                <td rowspan="2">3</td>
-                <td>Framework Development 1</td>
-                <td>5</td>
-                <td>Case study</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>Framework Project 1</td>
-                <td>7.5</td>
-                <td>Project, Assessment, Report</td>
-                <td>-</td>
+{{--            <tr>--}}
+{{--                <td rowspan="2">3</td>--}}
+{{--                <td>Framework Development 1</td>--}}
+{{--                <td>5</td>--}}
+{{--                <td>Case study</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>Framework Project 1</td>--}}
+{{--                <td>7.5</td>--}}
+{{--                <td>Project, Assessment, Report</td>--}}
+{{--                <td>-</td>--}}
 
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Framework Project 2</td>
-                <td>10</td>
-                <td>Portfolio, Project, Assessment</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td rowspan="2"> Hele jaar</td>
-                <td>PPD</td>
-                <td>12,5</td>
-                <td>Portfolio</td>
-                <td>-</td>
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>4</td>--}}
+{{--                <td>Framework Project 2</td>--}}
+{{--                <td>10</td>--}}
+{{--                <td>Portfolio, Project, Assessment</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td rowspan="2"> Hele jaar</td>--}}
+{{--                <td>PPD</td>--}}
+{{--                <td>12,5</td>--}}
+{{--                <td>Portfolio</td>--}}
+{{--                <td>-</td>--}}
 
 
-            </tr>
-            <tr>
-                <td>IT Personality</td>
-                <td>2,5</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
+{{--            </tr>--}}
+{{--            <tr>--}}
+{{--                <td>IT Personality</td>--}}
+{{--                <td>2,5</td>--}}
+{{--                <td>-</td>--}}
+{{--                <td>-</td>--}}
+{{--            </tr>--}}
 
         </table>
     </div>

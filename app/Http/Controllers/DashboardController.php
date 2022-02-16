@@ -2,6 +2,8 @@
 
 namespace app\Http\Controllers;
 
+use App\Models\Grades;
+
 class DashboardController
 {
     /*
@@ -9,6 +11,7 @@ class DashboardController
      */
     public function show()
     {
-        return view('dashboard');
+        $grades = Grades::all();
+        return view('dashboard', ['grades' => $grades]);
     }
 }

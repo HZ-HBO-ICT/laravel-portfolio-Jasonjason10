@@ -113,7 +113,7 @@ footer {
   grid-column: 1 / 4;
 }
 
-h1,p,span,ol,ul,h2{
+h1,p,span,ol,ul,h2, table{
   color: white;
 }
 
@@ -127,6 +127,4 @@ header {
   color: rgb(2, 0, 36);
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
 }
-table {
-  color: white;
-}
+
