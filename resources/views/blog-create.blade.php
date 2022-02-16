@@ -4,13 +4,13 @@
         <form method="POST" action="/FAQ">
             @csrf
             <div class="field">
-                <label class="label" for="questions">Question</label>
+                <label class="label" for="title">title</label>
                 <div class="control">
                     <input class="input" type="text" name="questions" id="questions">
                 </div>
             </div>
             <div class="field">
-                <label class="label" for="answer">Answer</label>
+                <label class="label" for="body">body</label>
                 <div class="control">
                     <textarea class="input" type="text" name="answers" id="answers"></textarea>
                 </div>

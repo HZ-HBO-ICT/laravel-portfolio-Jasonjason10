@@ -4,6 +4,8 @@ namespace app\Http\Controllers;
 
 use App\Models\Faq;
 
+use Illuminate\Http\Request;
+
 class FAQController
 {
     /*
@@ -35,7 +37,7 @@ class FAQController
      */
     public function create()
     {
-        //
+        return view('FAQ-create');
     }
 
 
@@ -47,7 +49,13 @@ class FAQController
      */
     public function store(Request $request)
     {
-        //
+        $post = new Faq();
+
+        $post->questions = request('questions');
+        $post->answers = request('answers');
+        $post->save();
+
+        return redirect('/FAQ');
     }
 
 

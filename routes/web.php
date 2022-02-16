@@ -41,10 +41,12 @@ Route::get('/posts/{post}', function ($post) {
 //});
 Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/blog', [BlogController::class, 'show']);
+Route::get('/blog/create', [BlogController::class, 'create']);
+Route::post('/blog', [BlogController::class, 'store']);
 Route::get('/profile', [ProfileController::class, 'show']);
 Route::get('/FAQ', [FAQController::class, 'show']);
+Route::get('/FAQ/create', [FAQController::class, 'create']);
+Route::post('/FAQ', [FAQController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'show']);
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
 Route::get('/{name}', [PortfolioController::class, 'show']);
-
-

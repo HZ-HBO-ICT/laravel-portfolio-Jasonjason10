@@ -2,6 +2,9 @@
 
 namespace app\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+
 use App\Models\Article;
 
 class BlogController
@@ -34,7 +37,7 @@ class BlogController
      */
     public function create()
     {
-        //
+        return view('blog-create');
     }
 
 
@@ -46,7 +49,13 @@ class BlogController
      */
     public function store(Request $request)
     {
-        //
+        $blog = new Article();
+
+        $blog->title = request('title');
+        $blog->body = request('body');
+        $blog->save();
+
+        return redirect('/blog');
     }
 
 
