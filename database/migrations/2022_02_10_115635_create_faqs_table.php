@@ -15,10 +15,10 @@ class CreateFaqsTable extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('questions');
             $table->text('answers');
             $table->string('link')->nullable();
+            $table->timestamps();
         });
     }
 

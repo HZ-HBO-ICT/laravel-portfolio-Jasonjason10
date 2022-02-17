@@ -17,8 +17,6 @@ class CreateArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body');
-
-
             $table->timestamps();
         });
     }
