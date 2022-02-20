@@ -67,7 +67,10 @@ class FAQController
      */
     public function edit($id)
     {
-        //
+        $posts = Faq::find($id);
+        return view('FAQ-edit', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -79,7 +82,11 @@ class FAQController
      */
     public function update(Request $request, $id)
     {
-        //
+        $posts = Faq::find($id);
+        $posts->questions = request('questions');
+        $posts->answers = request('answers');
+        $posts->save();
+        return redirect("/FAQ");
     }
 
     /**

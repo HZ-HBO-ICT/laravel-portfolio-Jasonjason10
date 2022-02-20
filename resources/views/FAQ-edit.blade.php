@@ -1,18 +1,19 @@
 @extends('layout')
 @section('content')
     <main>
-        <form method="POST" action="/blog">
+        <form method="POST" action="/FAQ">
             @csrf
+            @method("PUT")
             <div class="field">
-                <label class="label" for="title">title</label>
+                <label class="label" for="questions">Question</label>
                 <div class="control">
-                    <input class="input" type="text" name="title" id="title">
+                    <input class="input" type="text" name="questions" id="questions" value="{{$posts->questions}}">
                 </div>
             </div>
             <div class="field">
-                <label class="label" for="body">body</label>
+                <label class="label" for="answers">Answer</label>
                 <div class="control">
-                    <textarea class="input" type="text" name="body" id="body"></textarea>
+                    <textarea class="input" type="text" name="answers" id="answers">{{$posts->anwers}}</textarea>
                 </div>
             </div>
             <div class="field">
