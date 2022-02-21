@@ -2,10 +2,8 @@
 
 namespace app\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
 use App\Models\Article;
+use Illuminate\Http\Request;
 
 class BlogController
 {
@@ -50,13 +48,17 @@ class BlogController
      */
     public function store(Request $request)
     {
-        $blogs = new Article();
+//        $blogs = new Article();
+        Article::create($request->validate([
+            "title" => "required",
+            "body" => "required",
+        ]));
+//
+//        $blogs->title = request('title');
+//        $blogs->body = request('body');
+//        $blogs->save();
 
-        $blogs->title = request('title');
-        $blogs->body = request('body');
-        $blogs->save();
-
-        return redirect('/blog');
+        return redirect(route('blog.show'));
     }
 
 
@@ -66,9 +68,9 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $blogs)
     {
-        $blogs = Article::find($id);
+//        $blogs = Article::findOrFail($id);
         return view('blog-edit', ['blogs' => $blogs]);
     }
 
@@ -79,14 +81,20 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Article $blogs)
     {
-        $blogs = Article::find($id);
+//        $blogs = Article::findOrFail($id);
 
-        $blogs->title = request('title');
-        $blogs->body = request('body');
-        $blogs->save();
-        return redirect('/blog');
+        $blogs->update($request->validate([
+            "title" => "required",
+            "body" => "required",
+        ]));
+
+//        $blogs->title = request('title');
+//        $blogs->body = request('body');
+//        $blogs->save();
+        return redirect(route('blog.show', $blogs));
+
     }
 
     /**
@@ -95,8 +103,13 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $blogs)
     {
-        //
+//        $blogs = Article::findOrFail($id);
+
+        $blogs->title = request('title');
+        $blogs->body = request('body');
+        $blogs->delete();
+        return redirect(route('blog.show', $blogs));
     }
 }

@@ -39,18 +39,26 @@ Route::get('/posts/{post}', function ($post) {
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+//homepage route
 Route::get('/', [WelcomeController::class, 'show']);
-Route::get('/blog', [BlogController::class, 'show']);
-Route::get('/blog/{blog}/edit', [BlogController::class, 'edit']);
-Route::put('/blog/{blog}', [BlogController::class, 'update']);
-Route::get('/blog/create', [BlogController::class, 'create']);
-Route::post('/blog', [BlogController::class, 'store']);
+//blog routes
+Route::get('/blog', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/edit/{blogs}', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('/blog/{blogs}', [BlogController::class, 'update'])->name('blog.update');
+Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
+Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
+Route::delete('/blog/{blogs}', [BlogController::class, 'destroy'])->name('blog.destroy');
+//profile route
 Route::get('/profile', [ProfileController::class, 'show']);
-Route::get('/FAQ', [FAQController::class, 'show']);
-Route::get('/FAQ/{FAQ}/edit', [FAQController::class, 'edit']);
-Route::put('/FAQ/{FAQ}', [FAQController::class, 'update']);
+//FAQ routes
+Route::get('/FAQ', [FAQController::class, 'show'])->name('faq.show');
+Route::get('/FAQ/edit/{post}', [FAQController::class, 'edit']);
+Route::put('/FAQ/{post}', [FAQController::class, 'update']);
 Route::get('/FAQ/create', [FAQController::class, 'create']);
 Route::post('/FAQ', [FAQController::class, 'store']);
+Route::delete('/FAQ/{post}', [FAQController::class, 'destroy']);
+//dashboard route
 Route::get('/dashboard', [DashboardController::class, 'show']);
+//blog bedrijven safari route
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
 Route::get('/{name}', [PortfolioController::class, 'show']);

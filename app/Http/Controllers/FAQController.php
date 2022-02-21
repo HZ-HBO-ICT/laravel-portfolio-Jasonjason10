@@ -49,13 +49,17 @@ class FAQController
      */
     public function store(Request $request)
     {
-        $post = new Faq();
+//        $post = new Faq();
+        Faq::create($request->validate([
+            "questions" => "required",
+            "answers" => "required",
+        ]));
+//
+//        $post->questions = request('questions');
+//        $post->answers = request('answers');
+//        $post->save();
 
-        $post->questions = request('questions');
-        $post->answers = request('answers');
-        $post->save();
-
-        return redirect('/FAQ');
+        return redirect(route('faq.show'));
     }
 
 
@@ -65,11 +69,11 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Faq $post)
     {
-        $posts = Faq::find($id);
+//        $post = Faq::findOrFail($id);
         return view('FAQ-edit', [
-            'posts' => $posts
+            'post' => $post
         ]);
     }
 
@@ -80,13 +84,17 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Faq $post)
     {
-        $posts = Faq::find($id);
-        $posts->questions = request('questions');
-        $posts->answers = request('answers');
-        $posts->save();
-        return redirect("/FAQ");
+        $post->update($request->validate([
+            "questions" => "required",
+            "answers" => "required",
+        ]));
+//        $post = Faq::findOrFail($id);
+//        $post->questions = request('questions');
+//        $post->answers = request('answers');
+//        $post->save();
+        return redirect(route('faq.show', $post));
     }
 
     /**
@@ -95,8 +103,12 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Faq $post)
     {
-        //
+//        $post = Faq::findOrFail($id);
+        $post->questions = request('questions');
+        $post->answers = request('answers');
+        $post->delete();
+        return redirect(route('faq.show', $post));
     }
 }

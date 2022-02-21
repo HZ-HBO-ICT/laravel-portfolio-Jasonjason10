@@ -6,13 +6,13 @@
             <div class="field">
                 <label class="label" for="questions">Question</label>
                 <div class="control">
-                    <input class="input" type="text" name="questions" id="questions">
+                    <input class="input" required="text" type="text" name="questions" id="questions">
                 </div>
             </div>
             <div class="field">
                 <label class="label" for="answer">Answer</label>
                 <div class="control">
-                    <textarea class="input" type="text" name="answers" id="answers"></textarea>
+                    <textarea class="input" required="text" type="text" name="answers" id="answers"></textarea>
                 </div>
             </div>
             <div class="field">

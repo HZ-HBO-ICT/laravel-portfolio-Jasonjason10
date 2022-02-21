@@ -1,19 +1,19 @@
 @extends('layout')
 @section('content')
     <main>
-        <form method="POST" action="/FAQ">
+        <form method="POST" action="/FAQ/{{$post->id}}">
             @csrf
             @method("PUT")
             <div class="field">
                 <label class="label" for="questions">Question</label>
                 <div class="control">
-                    <input class="input" type="text" name="questions" id="questions" value="{{$posts->questions}}">
+                    <input class="input" required="text" type="text" name="questions" id="questions" value="{{$post->questions}}">
                 </div>
             </div>
             <div class="field">
                 <label class="label" for="answers">Answer</label>
                 <div class="control">
-                    <textarea class="input" type="text" name="answers" id="answers">{{$posts->anwers}}</textarea>
+                    <textarea class="input" required="text" type="text" name="answers" id="answers">{{$post->answers}}</textarea>
                 </div>
             </div>
             <div class="field">
@@ -27,6 +27,12 @@
                     <button class="button-is-text">Submit</button>
                 </div>
             </div>
+        </form>
+
+        <form method="POST" action="/FAQ/{{ $post->id }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
         </form>
 
 
