@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grades;
-use App\Http\Requests\StoreGradesRequest;
-use App\Http\Requests\UpdateGradesRequest;
+use Illuminate\Http\Request;
 
 class GradesController extends Controller
 {
@@ -15,7 +14,8 @@ class GradesController extends Controller
      */
     public function index()
     {
-        //
+        $grades = Grades::all();
+        return view('grades.index', ['grades' => $grades]);
     }
 
     /**
@@ -31,10 +31,10 @@ class GradesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreGradesRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreGradesRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -47,7 +47,8 @@ class GradesController extends Controller
      */
     public function show(Grades $grades)
     {
-        //
+        $grades = Grades::all();
+        return view('grades.index', ['grades' => $grades]);
     }
 
     /**
@@ -64,11 +65,11 @@ class GradesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateGradesRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Grades  $grades
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGradesRequest $request, Grades $grades)
+    public function update(Request $request, Grades $grades)
     {
         //
     }

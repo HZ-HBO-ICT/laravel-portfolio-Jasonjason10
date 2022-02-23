@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Grades extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
-/*
- * added the result
- */
+    /*
+     * added the result
+     */
     public function addResult($grade)
     {
         if ($grade > $this->best_grade) {
