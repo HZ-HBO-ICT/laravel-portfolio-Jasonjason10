@@ -13,6 +13,5 @@ class FaqSeeder extends Seeder
      */
     public function run()
     {
-        
     }
 }
