@@ -37,7 +37,6 @@ class BlogController
      */
     public function create()
     {
-
         return view('blog-create');
     }
 
@@ -50,15 +49,10 @@ class BlogController
      */
     public function store(Request $request)
     {
-//        $blogs = new Article();
         Article::create($request->validate([
             "title" => "required",
             "body" => "required",
         ]));
-//
-//        $blogs->title = request('title');
-//        $blogs->body = request('body');
-//        $blogs->save();
 
         return redirect(route('blog.index'));
     }
@@ -72,7 +66,6 @@ class BlogController
      */
     public function edit(Article $blog)
     {
-//        $blogs = Article::findOrFail($id);
         return view('blog-edit', ['blog' => $blog]);
     }
 
@@ -85,18 +78,11 @@ class BlogController
      */
     public function update(Request $request, Article $blog)
     {
-//        $blogs = Article::findOrFail($id);
-
         $blog->update($request->validate([
             "title" => "required",
             "body" => "required",
         ]));
-
-//        $blogs->title = request('title');
-//        $blogs->body = request('body');
-//        $blogs->save();
         return redirect(route('blog.show', $blog));
-
     }
 
     /**
@@ -107,8 +93,6 @@ class BlogController
      */
     public function destroy(Article $blog)
     {
-//        $blogs = Article::findOrFail($id);
-
         $blog->title = request('title');
         $blog->body = request('body');
         $blog->delete();

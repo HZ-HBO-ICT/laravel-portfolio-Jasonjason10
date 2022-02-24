@@ -37,13 +37,10 @@ Route::get('/posts/{post}', function ($post) {
     ]);
 });
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+
 //homepage route
 Route::get('/', [WelcomeController::class, 'show']);
 //blog routes
-
 Route::resource('/blog',BlogController::class);
 //profile route
 Route::get('/profile', [ProfileController::class, 'show']);
@@ -53,6 +50,5 @@ Route::resource('FAQ', FAQController::class);
 Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.show');
 //blog bedrijven safari route
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
-Route::get('/{name}', [PortfolioController::class, 'show']);
 //grades route
 Route::resource('/grade', GradesController::class);

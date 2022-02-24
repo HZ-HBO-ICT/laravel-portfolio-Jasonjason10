@@ -58,7 +58,6 @@ class FAQController
             "answers" => "required",
         ]));
 
-
         return redirect(route('FAQ.index'));
     }
 
@@ -71,7 +70,6 @@ class FAQController
      */
     public function edit(Faq $FAQ)
     {
-//        $post = Faq::findOrFail($id);
         return view('FAQ-edit', [
             'FAQ' => $FAQ
         ]);
@@ -90,10 +88,7 @@ class FAQController
             "questions" => "required",
             "answers" => "required",
         ]));
-//        $post = Faq::findOrFail($id);
-//        $post->questions = request('questions');
-//        $post->answers = request('answers');
-//        $post->save();
+
         return redirect(route('FAQ.show', $FAQ));
     }
 
@@ -105,7 +100,6 @@ class FAQController
      */
     public function destroy(Faq $FAQ)
     {
-//        $post = Faq::findOrFail($id);
         $FAQ->questions = request('questions');
         $FAQ->answers = request('answers');
         $FAQ->delete();

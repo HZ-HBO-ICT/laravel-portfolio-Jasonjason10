@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\persons;
+use App\Models\Person;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -18,7 +18,7 @@ class PortfolioController
      */
     public function show($name)
     {
-        $Persons = persons::where('name', $name)->firstOrFail();
+        $Persons = Person::where('name', $name)->firstOrFail();
 //        dd($persons);
         return view("portfolio", [
             'persons' => $Persons

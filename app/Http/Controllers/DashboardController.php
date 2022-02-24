@@ -2,7 +2,7 @@
 
 namespace app\Http\Controllers;
 
-use App\Models\Grades;
+use App\Models\Grade;
 
 class DashboardController
 {
@@ -11,7 +11,7 @@ class DashboardController
      */
     public function show()
     {
-        $grades = Grades::all();
+        $grades = Grade::all();
         return view('dashboard', ['grades' => $grades]);
     }
 
@@ -33,7 +33,7 @@ class DashboardController
      */
     public function store(Request $request)
     {
-        Grades::create($request->validate([
+        Grade::create($request->validate([
             "course_name" => "required",
             "test_name" => "required",
             "lowest_passing_grade" => "required",
@@ -50,10 +50,10 @@ class DashboardController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Grades  $grades
+     * @param  \App\Models\Grade  $grades
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grades $grades)
+    public function edit(Grade $grades)
     {
         return view('grade.edit', [
             'grades' => $grades
@@ -64,10 +64,10 @@ class DashboardController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Grades  $grades
+     * @param  \App\Models\Grade  $grades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grades $grades)
+    public function update(Request $request, Grade $grades)
     {
         $grades->update($request->validate([
             "course_name" => "required",
@@ -84,10 +84,10 @@ class DashboardController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Grades  $grades
+     * @param  \App\Models\Grade  $grades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grades $grades)
+    public function destroy(Grade $grades)
     {
         $grades->course_name=request('course_name');
         $grades->test_name=request('test_name');
