@@ -13,9 +13,9 @@ class FAQController
      */
     public function show()
     {
-        $posts = Faq::all();
-        return view('FAQ', [
-            'posts' => $posts
+        $FAQ = Faq::all();
+        return view('FAQ/{FAQ}', [
+            'FAQ' => $FAQ
         ]);
     }
 
@@ -27,7 +27,10 @@ class FAQController
      */
     public function index()
     {
-        //
+        $FAQ = Faq::all();
+        return view('FAQ', [
+            'FAQ' => $FAQ
+        ]);
     }
 
     /**
@@ -54,12 +57,9 @@ class FAQController
             "questions" => "required",
             "answers" => "required",
         ]));
-//
-//        $post->questions = request('questions');
-//        $post->answers = request('answers');
-//        $post->save();
 
-        return redirect(route('faq.show'));
+
+        return redirect(route('FAQ.index'));
     }
 
 
@@ -69,11 +69,11 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $post)
+    public function edit(Faq $FAQ)
     {
 //        $post = Faq::findOrFail($id);
         return view('FAQ-edit', [
-            'post' => $post
+            'FAQ' => $FAQ
         ]);
     }
 
@@ -84,9 +84,9 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $post)
+    public function update(Request $request, Faq $FAQ)
     {
-        $post->update($request->validate([
+        $FAQ->update($request->validate([
             "questions" => "required",
             "answers" => "required",
         ]));
@@ -94,7 +94,7 @@ class FAQController
 //        $post->questions = request('questions');
 //        $post->answers = request('answers');
 //        $post->save();
-        return redirect(route('faq.show', $post));
+        return redirect(route('FAQ.show', $FAQ));
     }
 
     /**
@@ -103,12 +103,12 @@ class FAQController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $post)
+    public function destroy(Faq $FAQ)
     {
 //        $post = Faq::findOrFail($id);
-        $post->questions = request('questions');
-        $post->answers = request('answers');
-        $post->delete();
-        return redirect(route('faq.show', $post));
+        $FAQ->questions = request('questions');
+        $FAQ->answers = request('answers');
+        $FAQ->delete();
+        return redirect(route('FAQ.show', $FAQ));
     }
 }

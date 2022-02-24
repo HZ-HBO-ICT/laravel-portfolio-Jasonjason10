@@ -14,8 +14,15 @@ class GradesController extends Controller
      */
     public function index()
     {
-        $grades = Grades::all();
-        return view('grades.index', ['grades' => $grades]);
+        $grade = Grades::all();
+        return view('grades.index', ['grades' => $grade]);
+    }
+
+
+    public function show()
+    {
+        $grade = Grades::all();
+        return view('dashboard', ['grades' => $grade]);
     }
 
     /**
@@ -25,7 +32,7 @@ class GradesController extends Controller
      */
     public function create()
     {
-        //
+        return view('grade.create');
     }
 
     /**
@@ -36,30 +43,31 @@ class GradesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Grades::create($request->validate([
+            "course_name" => "required",
+            "test_name" => "required",
+            "lowest_passing_grade" => "required",
+            "best_grade" => "required",
+            "EC" => "required",
+            "Quartile"=> "required",
+        ]));
+
+        return redirect(route('dashboard.show'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Grades  $grades
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Grades $grades)
-    {
-        $grades = Grades::all();
-        return view('grades.index', ['grades' => $grades]);
-    }
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Grades  $grades
+     * @param  \App\Models\Grades  $grade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grades $grades)
+    public function edit(Grades $grade)
     {
-        //
+        return view('grade.edit', [
+            'grade' => $grade
+        ]);
     }
 
     /**
@@ -69,9 +77,18 @@ class GradesController extends Controller
      * @param  \App\Models\Grades  $grades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grades $grades)
+    public function update(Request $request, Grades $grade)
     {
-        //
+        $grade->update($request->validate([
+            "course_name" => "required",
+            "test_name" => "required",
+            "lowest_passing_grade" => "required",
+            "best_grade" => "required",
+            "EC" => "required",
+            "Quartile"=> "required",
+        ]));
+
+        return redirect(route('dashboard.show', $grade));
     }
 
     /**
@@ -80,8 +97,15 @@ class GradesController extends Controller
      * @param  \App\Models\Grades  $grades
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Grades $grades)
+    public function destroy(Grades $grade)
     {
-        //
+        $grade->course_name=request('course_name');
+        $grade->test_name=request('test_name');
+        $grade->lowest_passing_grade=request('lowest_passing_grade');
+        $grade->best_grade=request('best_grade');
+        $grade->EC=request('EC');
+        $grade->Quartile=request('Quartile');
+        $grade->delete();
+        return redirect(route('dashboard.show', $grade));
     }
 }

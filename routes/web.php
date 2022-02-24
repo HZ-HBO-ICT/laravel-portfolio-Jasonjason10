@@ -44,35 +44,15 @@ Route::get('/posts/{post}', function ($post) {
 Route::get('/', [WelcomeController::class, 'show']);
 //blog routes
 
-Route::get('/blog', [BlogController::class, 'show'])->name('blog.show');
-Route::get('/blog/edit/{blogs}', [BlogController::class, 'edit'])->name('blog.edit');
-Route::put('/blog/{blogs}', [BlogController::class, 'update'])->name('blog.update');
-Route::get('/blog/create', [BlogController::class, 'create'])->name('blog.create');
-Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
-Route::delete('/blog/{blogs}', [BlogController::class, 'destroy'])->name('blog.destroy');
+Route::resource('/blog',BlogController::class);
 //profile route
 Route::get('/profile', [ProfileController::class, 'show']);
 //FAQ routes
-Route::get('/FAQ', [FAQController::class, 'show'])->name('faq.show');
-Route::get('/FAQ/edit/{post}', [FAQController::class, 'edit']);
-Route::put('/FAQ/{post}', [FAQController::class, 'update']);
-Route::get('/FAQ/create', [FAQController::class, 'create']);
-Route::post('/FAQ', [FAQController::class, 'store']);
-Route::delete('/FAQ/{post}', [FAQController::class, 'destroy']);
+Route::resource('FAQ', FAQController::class);
 //dashboard route
 Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.show');
-Route::get('/dashboard/edit/{grades}', [DashboardController::class, 'edit']);
-Route::put('/dashboard/{grades}', [DashboardController::class, 'update']);
-Route::get('/dashboard/create', [DashboardController::class, 'create']);
-Route::post('/dashboard', [DashboardController::class, 'store']);
-Route::delete('/dashboard/{grades}', [DashboardController::class, 'destroy']);
 //blog bedrijven safari route
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
 Route::get('/{name}', [PortfolioController::class, 'show']);
 //grades route
-//Route::get('/grade', [GradesController::class, 'show'])->name('grade.show');
-//Route::get('/grade/edit/{grades}', [GradesController::class, 'edit']);
-//Route::put('/grade/{grades}', [GradesController::class, 'update']);
-//Route::get('/grade/create', [GradesController::class, 'create']);
-//Route::post('/grade', [GradesController::class, 'store']);
-//Route::delete('/grade/{grades}', [GradesController::class, 'destroy']);
+Route::resource('/grade', GradesController::class);

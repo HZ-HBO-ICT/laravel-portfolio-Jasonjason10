@@ -9,13 +9,13 @@
     <article>
         <h1>Veel gestelde vragen</h1>
         <ul>
-            @foreach($posts as $post)
-                <li>{{ $post->questions }}</li>
+            @foreach($FAQ as $FAQs)
+                <li>{{ $FAQs->questions }}</li>
             @endforeach
         </ul>
         <ul>
-            @foreach($posts as $post)
-                <li>{{ $post->answers }}</li>
+            @foreach($FAQ as $FAQs)
+                <li>{{ $FAQs->answers }}</li>
             @endforeach
         </ul>
     </article>

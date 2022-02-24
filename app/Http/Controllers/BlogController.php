@@ -12,9 +12,9 @@ class BlogController
      */
     public function show()
     {
-        $blogs = Article::all();
+        $blog = Article::all();
 
-        return view('blog', ['blogs' => $blogs]);
+        return view('blog', ['blogs' => $blog]);
     }
 
 
@@ -25,7 +25,9 @@ class BlogController
      */
     public function index()
     {
-        //
+        $blog = Article::all();
+
+        return view('blog', ['blogs' => $blog]);
     }
 
     /**
@@ -58,7 +60,7 @@ class BlogController
 //        $blogs->body = request('body');
 //        $blogs->save();
 
-        return redirect(route('blog.show'));
+        return redirect(route('blog.index'));
     }
 
 
@@ -68,10 +70,10 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $blogs)
+    public function edit(Article $blog)
     {
 //        $blogs = Article::findOrFail($id);
-        return view('blog-edit', ['blogs' => $blogs]);
+        return view('blog-edit', ['blog' => $blog]);
     }
 
     /**
@@ -81,11 +83,11 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $blogs)
+    public function update(Request $request, Article $blog)
     {
 //        $blogs = Article::findOrFail($id);
 
-        $blogs->update($request->validate([
+        $blog->update($request->validate([
             "title" => "required",
             "body" => "required",
         ]));
@@ -93,7 +95,7 @@ class BlogController
 //        $blogs->title = request('title');
 //        $blogs->body = request('body');
 //        $blogs->save();
-        return redirect(route('blog.show', $blogs));
+        return redirect(route('blog.show', $blog));
 
     }
 
@@ -103,13 +105,13 @@ class BlogController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $blogs)
+    public function destroy(Article $blog)
     {
 //        $blogs = Article::findOrFail($id);
 
-        $blogs->title = request('title');
-        $blogs->body = request('body');
-        $blogs->delete();
-        return redirect(route('blog.show', $blogs));
+        $blog->title = request('title');
+        $blog->body = request('body');
+        $blog->delete();
+        return redirect(route('blog.show', $blog));
     }
 }

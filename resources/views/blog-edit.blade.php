@@ -2,19 +2,19 @@
 @section('content')
     <main>
         <h1>Update Blog</h1>;
-        <form method="POST" action="/blog/{{$blogs->id}}">
+        <form method="POST" action="/blog/{{$blog->id}}">
             @csrf
             @method('PUT')
             <div class="field">
                 <label class="label" for="title">title</label>
                 <div class="control">
-                    <input class="input" required type="text" name="title" id="title" value="{{$blogs->title}}">
+                    <input class="input" required type="text" name="title" id="title" value="{{$blog->title}}">
                 </div>
             </div>
             <div class="field">
                 <label class="label" for="body">body</label>
                 <div class="control">
-                    <textarea class="input" required type="text" name="body" id="body">{{$blogs->body}}</textarea>
+                    <textarea class="input" required type="text" name="body" id="body">{{$blog->body}}</textarea>
                 </div>
             </div>
 {{--            <div class="field">--}}
@@ -30,7 +30,7 @@
             </div>
         </form>
 
-        <form method="POST" action="/blog/{{ $blogs->id }}">
+        <form method="POST" action="/blog/{{ $blog->id }}">
             @csrf
             @method('DELETE')
             <button type="submit">Delete</button>
