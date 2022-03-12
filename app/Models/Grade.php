@@ -24,4 +24,7 @@ class Grade extends Model
             $this->save();
         }
     }
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }
