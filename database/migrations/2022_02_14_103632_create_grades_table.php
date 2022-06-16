@@ -29,9 +29,9 @@ class CreateGradesTable extends Migration
             $table->timestamps();
         });
         Schema::table('grades', function (Blueprint $table) {
-            $table->foreignId('courses_id')
-                ->constrained()
-                ->onDelete('cascade');
+            // $table->foreignId('courses_id')
+            //     ->constrained()
+            //     ->onDelete('cascade');
         });
     }
 
