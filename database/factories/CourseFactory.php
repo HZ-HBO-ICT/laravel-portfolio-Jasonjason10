@@ -14,7 +14,7 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'CU-code'=> $this->faker->numberBetween(1.50),
+            
             'name'=> $this->faker->name,
             'credits'=> $this->faker->numberBetween(1,10),
         ];
