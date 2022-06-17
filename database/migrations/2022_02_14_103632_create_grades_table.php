@@ -28,11 +28,11 @@ class CreateGradesTable extends Migration
                 ->nullable();
             $table->timestamps();
         });
-        Schema::table('grades', function (Blueprint $table) {
-            // $table->foreignId('courses_id')
-            //     ->constrained()
-            //     ->onDelete('cascade');
-        });
+        // Schema::table('grades', function (Blueprint $table) {
+        //     // $table->foreignId('courses_id')
+        //     //     ->constrained()
+        //     //     ->onDelete('cascade');
+        // });
     }
 
     /**
@@ -43,9 +43,9 @@ class CreateGradesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('grades');
-        Schema::table('grades', function (Blueprint $table) {
-            $table->dropForeign(['courses_id']);
-            $table->dropColumn('courses_id');
-        });
+        // Schema::table('grades', function (Blueprint $table) {
+        //     $table->dropForeign(['courses_id']);
+        //     $table->dropColumn('courses_id');
+        // });
     }
 }
