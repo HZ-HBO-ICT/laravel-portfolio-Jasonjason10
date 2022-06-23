@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogsafariController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\GradesController;
+use App\Http\Controllers\Auth\LoginController;
 
 
 /*
@@ -52,3 +53,9 @@ Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.
 Route::get('/blogsafari', [BlogsafariController::class, 'show']);
 //grades route
 Route::resource('/grade', GradesController::class);
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

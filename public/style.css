@@ -53,6 +53,10 @@ nav ul li {
   float: left;
 }
 
+nav ul .align-right {
+    float: right;
+}
+
 nav ul li a {
   display: block;
   color: white;
@@ -128,3 +132,7 @@ header {
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
 }
 
+.align-right {
+    text-align: right;
+    color: red;
+}
