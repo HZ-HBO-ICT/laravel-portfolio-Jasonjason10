@@ -135,9 +135,15 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'password' => [
+            'required' => 'you need to fill in a password',
+            'password' => 'this password is incorrect'
         ],
+        'email'=>[
+            'requiered' => 'you need to fill in a email',
+            'email' => 'this email is invalid'
+
+        ]
     ],
 
     /*
