@@ -140,7 +140,7 @@ return [
             'password' => 'this password is incorrect'
         ],
         'email'=>[
-            'requiered' => 'you need to fill in a email',
+            'required' => 'you need to fill in a email',
             'email' => 'this email is invalid'
 
         ]
