@@ -37,6 +37,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
 
-    
+
     }
+    public function store()
+{
+    request()->validate([
+        'email' => 'required',
+        'password' => 'required'
+    ],
+    [
+        'email.required' => 'You have to choose the file!',
+        'password.required' => 'You have to choose type of the file!',
+        'password.password' => 'your password is wrong',
+        'email.email' => 'your email is wrong'
+    ]);
+}
 }
