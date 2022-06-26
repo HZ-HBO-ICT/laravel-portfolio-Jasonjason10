@@ -13,17 +13,8 @@ return [
     |
     */
 
-    'failed' => [
-        'password' => [
-            'required' => 'you need to fill in a password',
-            'password' => 'this password is incorrect'
-        ],
-        'email'=>[
-            'required' => 'you need to fill in a email',
-            'email' => 'this email is invalid'
-
-        ]
-    ],
+    'failed' => 'This information is incorrect please try again.',
+    'failed' => 'password is wrong',
     'custom'=> '',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
