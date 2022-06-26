@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -39,17 +40,22 @@ class LoginController extends Controller
 
 
     }
-    public function store()
-{
-    request()->validate([
-        'email' => 'required',
-        'password' => 'required'
-    ],
-    [
-        'email.required' => 'You have to choose the file!',
-        'password.required' => 'You have to choose type of the file!',
-        'password.password' => 'your password is wrong',
-        'email.email' => 'your email is wrong'
-    ]);
-}
+       /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $message
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $message)
+    {
+        return Validator::make($message, [
+            'email.required' => 'We need to know your e-mail address!',
+            'email.email' => 'your email is wrong,',
+            'passsword.required' => 'You need to fill in a password',
+            'password.password' =>'you password is wrong'
+
+
+        ]);
+    }
+
 }
