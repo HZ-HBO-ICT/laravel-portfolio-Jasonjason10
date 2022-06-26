@@ -40,21 +40,18 @@ class LoginController extends Controller
 
 
     }
-       /**
+      /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $message
+     * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $message)
+    protected function validator(array $data)
     {
-        return Validator::make($message, [
-            'email.required' => 'We need to know your e-mail address!',
-            'email.email' => 'your email is wrong,',
-            'passsword.required' => 'You need to fill in a password',
-            'password.password' =>'you password is wrong'
-
-
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
