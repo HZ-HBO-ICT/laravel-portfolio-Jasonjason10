@@ -15,12 +15,12 @@
                     <textarea class="input" required="text" type="text" name="answers" id="answers"></textarea>
                 </div>
             </div>
-            <div class="field">
+            <!-- <div class="field">
                 <label class="label" for="link">Link</label>
                 <div class="control">
                     <input class="input" type="text" name="link" id="link">
                 </div>
-            </div>
+            </div> -->
             <div class="field is-grouped">
                 <div class="control">
                     <button class="button-is-text">Submit</button>
