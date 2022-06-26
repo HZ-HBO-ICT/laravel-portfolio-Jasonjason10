@@ -17,7 +17,7 @@
                 <th>Strengths</th>
                 <th>Weaknesses</th>
                 <tr>
-                    <td>Ik ben een erg gemotiveerd. En ik ben een harde werker die niet snel opgeeft.</td>
+                    <td>Ik ben een erg gemotiveerd. En  ik ben een harde werker die niet snel opgeeft.</td>
                     <td>Soms kijk ik te moeilijk naar een probleem, waardoor ik een makkelijkere en snellere oplossing
                         pas
                         later zie.
