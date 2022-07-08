@@ -94,7 +94,7 @@ hr {
 }
 
 .explanation-register {
-    text-align: center;
+    text-align: right;
     justify-content: right;
     color: blue;
 }
