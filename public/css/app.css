@@ -93,7 +93,7 @@ hr {
   opacity: 0.25;
 }
 
-#explanation-register {
+.explanation-register {
     text-align: center;
     justify-content: right;
     color: blue;
