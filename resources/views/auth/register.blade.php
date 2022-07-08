@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <ul class="explaination-register">
+    <ul class="explanation-register">
         <li>Your password needs to have a least 8 characters</li>
         <li>You can't pick the same email twice</li>
     </ul>
