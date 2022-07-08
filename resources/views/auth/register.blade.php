@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    <ul class="explaination-register">
+        <li>Your password needs to have a least 8 characters</li>
+        <li>You can't pick the same email twice</li>
+    </ul>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

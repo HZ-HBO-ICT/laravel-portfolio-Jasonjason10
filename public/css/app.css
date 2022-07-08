@@ -93,6 +93,10 @@ hr {
   opacity: 0.25;
 }
 
+ul {
+    text-align: center;
+}
+
 hr:not([size]) {
   height: 1px;
 }
