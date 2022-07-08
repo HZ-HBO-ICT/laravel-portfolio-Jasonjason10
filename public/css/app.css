@@ -96,6 +96,7 @@ hr {
 ul {
     text-align: center;
     justify-content: right;
+    color: blue;
 }
 
 hr:not([size]) {
