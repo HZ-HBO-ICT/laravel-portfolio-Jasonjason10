@@ -38,12 +38,22 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        // $this->reportable(function (Throwable $e) {
-        //     //
-        // });
-        $this->renderable(function (CustomException $e, $request) {
-            return response()->view('errors.custom', [], 500);
+        $this->reportable(function (Throwable $e) {
+            //
         });
+
+    }
+
+    public function render($request, Throwable $exception)
+    {
+        // Render well-known exceptions here
+
+    // Otherwise display internal error message
+    if(!env('APP_DEBUG', false)){
+        return view('errors.500');
+    } else {
+        return parent::render($request, $exception);
+    }
     }
 
 
