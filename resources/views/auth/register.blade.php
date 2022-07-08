@@ -70,6 +70,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                
+    <ul id="explanation-register">
+        <li>Your password needs to have a least 8 characters</li>
+        <li>You can't pick the same email twice</li>
+    </ul>
                             </div>
                         </div>
                     </form>
