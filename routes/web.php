@@ -50,7 +50,7 @@ Route::resource('FAQ', FAQController::class);
 //dashboard route
 Route::get('/dashboard', [DashboardController::class, 'show'])->name('dashboard.show');
 //blog bedrijven safari route
-Route::get('/blogsafari', [BlogsafariController::class, 'show']);
+Route::get('/blogsafari', [BlogsafariController::class, 'shw']);
 //grades route
 Route::resource('/grade', GradesController::class);
 
