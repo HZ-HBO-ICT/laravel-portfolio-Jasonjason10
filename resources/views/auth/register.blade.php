@@ -2,7 +2,15 @@
 
 @section('content')
 <div class="container">
+    <div class="explanation-register">
+    <ul>
+        <li>Your password needs to have a least 8 characters</li>
+        <li>You can't register with the same email twice</li>
+        <li>Your chosen email needs to have the structure of an actual email</li>
+        <li>Your need to confirm the password you choose and they need to match</li>
 
+    </ul>
+    </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -74,12 +82,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="explanation-register">
-    <ul>
-        <li>Your password needs to have a least 8 characters</li>
-        <li>You can't pick the same email twice</li>
-    </ul>
     </div>
 </div>
 @endsection
