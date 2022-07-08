@@ -95,6 +95,7 @@ hr {
 
 ul {
     text-align: center;
+    justify-content: right;
 }
 
 hr:not([size]) {
