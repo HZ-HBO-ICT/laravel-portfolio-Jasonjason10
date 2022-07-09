@@ -12,8 +12,8 @@
             <h2 class="display-3">404</h2>
             <p class="display-5">Oops! Something is wrong please go back!</p>
         </div>
-        <button onclick="history.back()">Go Back</button>
-        <button><a href="/">Home</a></button>
+        <button class="display-3" onclick="history.back()">Go Back</button>
+        <button class="display-5"><a href="/">Home</a></button>
     </div>
 
 </body>
