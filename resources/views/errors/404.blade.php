@@ -22,7 +22,7 @@
         }
 
         .button {
-            position: absolute;
+            position: relative;
             top: 50%;
         }
     </style>
