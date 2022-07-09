@@ -13,5 +13,6 @@
             <p class="display-5">Oops! Something is wrong please go back!</p>
         </div>
     </div>
+    <button onclick="history.back()">Go Back</button>
 </body>
 </html>
