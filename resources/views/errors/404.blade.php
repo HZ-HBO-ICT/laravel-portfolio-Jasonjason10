@@ -10,6 +10,9 @@
             text-align: center;
             justify-content: center;
         }
+        a {
+            color: black;
+        }
     </style>
 </head>
 <body>
