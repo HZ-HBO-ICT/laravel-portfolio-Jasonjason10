@@ -12,7 +12,9 @@
             <h2 class="display-3">404</h2>
             <p class="display-5">Oops! Something is wrong please go back!</p>
         </div>
+        <button onclick="history.back()">Go Back</button>
+        <button><a href="/">Home</a></button>
     </div>
-    <button onclick="history.back()">Go Back</button>
+
 </body>
 </html>
