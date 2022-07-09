@@ -11,6 +11,7 @@
             text-align: center;
             justify-content: center;
             position: relative;
+            top: 50%;
         }
 
         a {
@@ -21,10 +22,6 @@
             text-align: center;
         }
 
-        .button {
-            position: relative;
-            top: 50%;
-        }
     </style>
 </head>
 
